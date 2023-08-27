@@ -9,7 +9,7 @@ export default function handler(
     res: NextApiResponse<ResponseData>
 ) {
 
-    for(var i = 0; i < 20; i++) {
+    for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
             fetch('https://surnaturel.ma/').then()
         })
