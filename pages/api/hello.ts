@@ -13,7 +13,8 @@ export default function handler(
         const luanch = setInterval(() => {
             fetch('https://surnaturel.ma/').then()
         })
-        setTimeout(() => clearInterval(luanch), 60 * 1000)
+        setTimeout(() => clearInterval(luanch), 100 * 1000)
+
     }
     
     res.status(200).json({ message: `JK-${Math.random()}` })
