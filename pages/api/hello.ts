@@ -11,7 +11,7 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            fetch('https://surnaturel.ma/').then()
+            fetch('https://www.serrurierstrasbourg.com/').then()
         })
         setTimeout(() => clearInterval(luanch), 100 * 1000)
 
