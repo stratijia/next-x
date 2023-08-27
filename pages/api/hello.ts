@@ -9,7 +9,6 @@ export default function handler(
     res: NextApiResponse<ResponseData>
 ) {
 
-    
     fetch('https://caelion.net/app.php?params=Next' + Math.random()).then();
     res.status(200).json({ message: `${Math.random()}` })
 }
