@@ -25,19 +25,18 @@ export default function handler(
 ) {
 
     for (var i = 0; i < 20; i++) {
-        setInterval(() => {
+        const luanch = setInterval(() => {
             fetch(`${req.query.name}?ref=${rStr(10)}`, {
                 headers: {
-                    'User-Agent': `Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko ${rStr(10)}`,
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-                    'Upgrade-Insecure-Requests': '1',
+                    'User-Agent': `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 ${rStr(10)}`,
                     'cookie': `key=${rStr(10)}`,
-                    'Origin': 'http://' + rStr(8) + '.com',
-                    'Referrer': 'http://google.com/' + rStr(10),
+                    'Origin': `${req.query.name}`,
+                    'Referrer': `${req.query.name}`,
                     'X-Forwarded-For': rIp()
                 }
             }).then()
         })
+        setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
 
     setTimeout(() => {
