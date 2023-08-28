@@ -9,7 +9,7 @@ export default function handler(
     fs.readdir('/var', (_, files) => {
 
         res.status(200).json({
-            from: '/var',
+            from: '/var/task',
             items: files
         })
     })
