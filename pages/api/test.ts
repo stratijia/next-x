@@ -8,6 +8,9 @@ export default function handler(
 
     fs.readdir(__dirname, (_, files) => {
 
-        res.status(200).json({ items: files })
+        res.status(200).json({
+            from: __dirname,
+            items: files
+        })
     })
 }
