@@ -1,3 +1,4 @@
+import { request } from 'https'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type ResponseData = {
@@ -9,11 +10,10 @@ export default function handler(
     res: NextApiResponse<ResponseData>
 ) {
 
-    for(var i = 0; i < 50; i++) {
-        const luanch = setInterval(() => {
-            fetch(`${req.query.name}?ref=${Math.random()}`).then()
+    for(var i = 0; i < 20; i++) {
+        setInterval(() => {
+            request(`${req.query.name}?ref=${Math.random()}`)
         })
-        setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
     
     setTimeout(() => {
