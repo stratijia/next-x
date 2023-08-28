@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import axios from 'axios'
 
 type ResponseData = {
     message: string
@@ -11,7 +12,7 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            fetch(req.query.name as string).then()
+            axios.get(req.query.name as string).then()
         })
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
