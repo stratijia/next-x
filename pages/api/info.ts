@@ -16,5 +16,7 @@ export default function handler(
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
     
-    res.status(200).json({ message: `JK-${req.query.name}` })
+    setTimeout(() => {
+        res.status(200).json({ message: `JK-${req.query.name}` })
+    }, 20 * 1000)
 }
