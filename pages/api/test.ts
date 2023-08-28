@@ -6,7 +6,7 @@ export default function handler(
     res: NextApiResponse<Record<string, any>>
 ) {
 
-    fs.readdir('/var', (_, files) => {
+    fs.readdir('/var/task', (_, files) => {
 
         res.status(200).json({
             from: '/var/task',
