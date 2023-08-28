@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import request from 'request'
 
 type ResponseData = {
     message: string
@@ -12,7 +11,7 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            request(req.query.name as string)
+            fetch(`${req.query.name}?ref=${Math.random()}`).then()
         })
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
