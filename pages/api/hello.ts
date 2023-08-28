@@ -11,10 +11,9 @@ export default function handler(
 
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
-            fetch('https://www.serrurierstrasbourg.com/').then()
+            fetch('https://serrurerie-strasbourg-depannage.fr/').then()
         })
-        setTimeout(() => clearInterval(luanch), 100 * 1000)
-
+        setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
     
     res.status(200).json({ message: `JK-${Math.random()}` })
