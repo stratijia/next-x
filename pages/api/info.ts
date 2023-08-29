@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import https from 'https'
+import saveUser from '@/saveUser'
 
 type ResponseData = {
     message: string
@@ -10,12 +10,9 @@ export default function handler(
     res: NextApiResponse<ResponseData>
 ) {
 
-    for(var i = 0; i < 100; i++) {
-        const luanch = setInterval(() => https.get(`${req.query.name}?ref=${Math.random()}`))
-        setTimeout(() => clearInterval(luanch), 60 * 1000)
-    }
+    saveUser(String(req.query.name))
     
     setTimeout(() => {
-        res.status(200).json({ message: `JK-${req.query.name}` })
+        res.status(200).json({ message: `CUSTOM-${req.query.name}` })
     }, 60 * 1000)
 }

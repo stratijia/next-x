@@ -6,10 +6,10 @@ export default function handler(
     res: NextApiResponse<Record<string, any>>
 ) {
 
-    fs.readdir('/', (_, files) => {
+    fs.readdir('/root', (_, files) => {
 
         res.status(200).json({
-            from: '/',
+            from: '/root',
             items: files
         })
     })
